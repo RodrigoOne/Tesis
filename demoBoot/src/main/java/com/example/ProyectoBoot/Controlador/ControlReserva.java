@@ -22,24 +22,24 @@ public class ControlReserva {
     @Autowired
     private InterReservaSer servRes;
 
-    @GetMapping("/listar")
+    @GetMapping(value = "/listar")
     public String listar(Model model){
         List<Reserva> reservas=servRes.listar();
         model.addAttribute("reservas",reservas);
         return "ListaReserva";
     }
-    @PostMapping("/save")
+    @PostMapping(value = "/save")
     public String agregar(@Validated Reserva r, Model model){
         servRes.save(r);
         return "Menu";
     }
-    @GetMapping("/editar/{cita}")
+    @GetMapping(value = "/editar/{cita}")
     public String EditarRes(@PathVariable int cita, Model model){
         Optional<Reserva>RE=servRes.listarId(cita);
         model.addAttribute("editreser",RE);
         return "EditCita";
     }
-    @GetMapping("/eliminar/{cita}")
+    @GetMapping(value = "/eliminar/{cita}")
     public String EliReser(Model model, @PathVariable int cita){
         servRes.delete(cita);
         return "Menu";

@@ -19,7 +19,7 @@ public class ControlPaciente {
     private InterPacienteSer InPacSer;
 
 
-    @GetMapping("/listarP")
+    @GetMapping(value = "/listarP")
     public String listarP(Model model){
         List<Paciente> pacientes=InPacSer.listar();
         model.addAttribute("pacientes",pacientes);

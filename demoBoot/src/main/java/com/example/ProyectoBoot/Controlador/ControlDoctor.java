@@ -18,7 +18,7 @@ public class ControlDoctor {
     @Autowired
     private InterDoctorSer InDocSer;
 
-    @GetMapping("/listarD")
+    @GetMapping(value = "/listarD")
     public String listarD(Model model){
         List<Doctor> doctores=InDocSer.listar();
         model.addAttribute("doctores",doctores);
