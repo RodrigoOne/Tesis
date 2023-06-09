@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-4">
+  <div>
+    <h3>Lista de Doctores</h3>
+  </div>
+  <table class="table">
+    <thead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Rut</th>
+    <th>Especialidad</th>
+    <th>Accion</th>
+    </thead>
+    <tbody>
+    <tr th:each="doc:${doctores}">
+      <td th:text="${doc.nombre}"></td>
+      <td th:text="${doc.apellido}"></td>
+      <td th:text="${doc.rut}"></td>
+      <td th:text="${doc.especualidad}"></td>
+      <td>
+
+        <a th:href="@{/ircita}" class="btn btn-warning">Agregar Cita</a>
+      </td>
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
